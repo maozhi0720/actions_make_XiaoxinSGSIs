@@ -1,8 +1,8 @@
 name: build_XiaoxinSGSIs
 
-on:
-  watch:
-    types: [started]
+on: [push]
+  #watch:
+    #types: [started]
 #  push:
 #    branches: [ master ]
 #  pull_request:
@@ -74,8 +74,8 @@ jobs:
        - name: Make Flyme SGSI
          if: steps.var.outputs.make_flyme == 'true'
          run: |
-           sudo rm -rf SGSI-build-tool/10/fixbug/fixbug.sh
-           mv fix/Flyme.sh SGSI-build-tool/10/fixbug/fixbug.sh
+           sudo rm -rf SGSI-build-tool/11/fixbug/fixbug.sh
+           mv fix/Flyme.sh SGSI-build-tool/11/fixbug/fixbug.sh
            
        - name: Make ColorOS SGSI
          if: steps.var.outputs.make_coloros == 'true'
